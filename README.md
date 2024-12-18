@@ -1,10 +1,10 @@
 # Embedded Rust
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Linting](https://github.com/rust-embedded/awesome-embedded-rust/actions/workflows/Linting.yml/badge.svg)](https://github.com/rust-embedded/awesome-embedded-rust/actions/workflows/Linting.yml)
 
 This is a curated list of resources related to embedded and low-level programming in the Rust programming language, including a selection of useful crates.
 
-[<img src="https://rawgit.com/rust-embedded/awesome-embedded-rust/master/rust-embedded-logo-256x256.png" align="right" width="256">](http://www.rust-embedded.org)
+[<img src="https://rawgit.com/rust-embedded/awesome-embedded-rust/master/rust-embedded-logo-256x256.png" alt="Rust Embedded Logo" align="right" width="256">](http://www.rust-embedded.org)
 
 This project is developed and maintained by the [Resources team][team].
 
@@ -85,6 +85,7 @@ This project is developed and maintained by the [Resources team][team].
     - [WIP](#wip)
   - [no-std crates](#no-std-crates)
     - [WIP](#wip-1)
+  - [Panic handling](#panic-handling)
   - [Firmware projects](#firmware-projects)
   - [Old books, blogs, and training materials](#old-books-blogs-and-training-materials)
   - [License](#license)
@@ -170,7 +171,7 @@ specifically endorsed or reviewed for accuracy or quality by the Embedded Workin
 ## Tools
 
 - [xargo](https://github.com/japaric/xargo) Rust package manager with support for non-default std libraries — build Rust runtime for your embedded system.
-    - xargo is great, but since it's in maintenance mode, [cargo-xbuild](https://github.com/rust-osdev/cargo-xbuild) is catching up as its intended replacement.
+  - xargo is great, but since it's in maintenance mode, [cargo-xbuild](https://github.com/rust-osdev/cargo-xbuild) is catching up as its intended replacement.
 - [svd2rust](https://github.com/japaric/svd2rust) Generate Rust structs with register mappings from SVD files.
 - [edc2svd](https://github.com/kiffie/edc2svd) Generate SVD files for PIC32 devices from EDC files. - [![crates.io](https://img.shields.io/crates/v/edc2svd.svg)](https://crates.io/crates/edc2svd)
 - [embedded-hal-mock] Mock implementation of `embedded-hal` traits for testing without accessing real hardware. - [![crates.io](https://img.shields.io/crates/v/embedded-hal-mock.svg)](https://crates.io/crates/embedded-hal-mock)
@@ -189,14 +190,13 @@ specifically endorsed or reviewed for accuracy or quality by the Embedded Workin
 - [uf2](https://github.com/sajattack/uf2conv-rs) Converts binary files to Microsoft's UF2 format for copying over to mass storage device uf2 bootloaders - [![crates.io](https://img.shields.io/crates/v/uf2.svg)](https://crates.io/crates/uf2)
 - [probe-rs](https://github.com/probe-rs/probe-rs): a modern, embedded debugging toolkit, written in Rust
 - [Knurling Tools](https://knurling.ferrous-systems.com/tools/) are developed by [Ferrous Systems] to ease the development process for building, debugging, and testing embedded Rust systems. These tools include:
-    - [defmt](https://github.com/knurling-rs/defmt): a highly efficient logging framework that targets resource-constrained devices, like microcontrollers.
-    - [flip-link](https://github.com/knurling-rs/flip-link), a linker wrapper that provides stack overflow protection without an MMU by flipping the standard memory layout of ARM Cortex-M programs
-    - [app-template](https://github.com/knurling-rs/app-template), a `cargo-generate` powered project template for quickly setting up new projects using the Knurling Tools.
-    - [defmt-test](https://github.com/knurling-rs/defmt-test), an embedded test harness that lets you write and run unit tests as if you were using the built-in `#[test]` attribute, but will run on an embedded target
+  - [defmt](https://github.com/knurling-rs/defmt): a highly efficient logging framework that targets resource-constrained devices, like microcontrollers.
+  - [flip-link](https://github.com/knurling-rs/flip-link), a linker wrapper that provides stack overflow protection without an MMU by flipping the standard memory layout of ARM Cortex-M programs
+  - [app-template](https://github.com/knurling-rs/app-template), a `cargo-generate` powered project template for quickly setting up new projects using the Knurling Tools.
+  - [defmt-test](https://github.com/knurling-rs/defmt-test), an embedded test harness that lets you write and run unit tests as if you were using the built-in `#[test]` attribute, but will run on an embedded target
 - [embedded-hal-compat](https://github.com/ryankurte/embedded-hal-compat), a compatibility layer to provide interoperability between `v0.2.x` and `v1.x.x` hal implementations and drivers
 - [Embassy start](https://github.com/titanclass/embassy-start) is a GitHub repo template for setting up async embedded Rust projects that use [Embassy](https://github.com/embassy-rs/embassy). This particular template targets nRF hardware and networking using the Uarte for the purposes of illustration only.
 - [svd-generator](https://codeberg.org/weathered-steel/svd-generator) CLI tool to parse flattened device tree files, and create a SVD file. - [![crates.io](https://img.shields.io/crates/v/svd-generator.svg)](https://crates.io/crates/svd-generator)
-
 
 [embedded-hal-mock]: https://crates.io/crates/embedded-hal-mock
 
@@ -214,8 +214,8 @@ specifically endorsed or reviewed for accuracy or quality by the Embedded Workin
 ### Real-time tools
 
 - [RTIC v1.0](https://rtic.rs/1/book/en/) Real-Time Interrupt-driven Concurrency — A concurrency framework for building real-time systems:
-    - [cortex-m rtic](https://github.com/rtic-rs/cortex-m-rtic) RTIC framework for ARM Cortex-M microcontrollers
-    - [msp430 rtfm](https://github.com/japaric/msp430-rtfm) RTFM framework for MSP430 MCUs
+  - [cortex-m rtic](https://github.com/rtic-rs/cortex-m-rtic) RTIC framework for ARM Cortex-M microcontrollers
+  - [msp430 rtfm](https://github.com/japaric/msp430-rtfm) RTFM framework for MSP430 MCUs
 
 ## Peripheral Access Crates
 
@@ -324,7 +324,7 @@ The [`stm32-rs`](https://github.com/stm32-rs/stm32-rs) project has peripheral ac
 ### MSP430
 
 - [`msp430g2553`](https://github.com/japaric/msp430g2553) Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust)
-    - [msp430 quickstart](https://github.com/rust-embedded/msp430-quickstart) some examples for msp430
+  - [msp430 quickstart](https://github.com/rust-embedded/msp430-quickstart) some examples for msp430
 - [`msp430fr2355`](https://crates.io/crates/msp430fr2355) Peripheral access API for MSP430FR2355 microcontrollers (generated using svd2rust)
 - [`msp430fr6972`](https://crates.io/crates/msp430fr6972) - [![crates.io](https://img.shields.io/crates/v/msp430fr6972)](https://crates.io/crates/msp430fr6972)
 
@@ -375,6 +375,7 @@ Peripheral access crates for the different XMC4xxx families of microcontrollers
 - [`w7500x-pac`](https://crates.io/crates/w7500x-pac) Peripheral Access Crate for Wiznet's W7500x microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/w7500x-pac.svg)](https://crates.io/crates/w7500x-pac)
 
 ### Renesas
+
 - [`ra2a1`](https://github.com/ra-rs/ra/tree/main/pac/ra2a1) Peripheral Access Crate for ra2a1 microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/ra2a1.svg)](https://crates.io/crates/ra2a1)
 - [`ra2e1`](https://github.com/ra-rs/ra/tree/main/pac/ra2e1) Peripheral Access Crate for ra2e1 microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/ra2e1.svg)](https://crates.io/crates/ra2e1)
 - [`ra2e2`](https://github.com/ra-rs/ra/tree/main/pac/ra2e2) Peripheral Access Crate for ra2e2 microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/ra2e2.svg)](https://crates.io/crates/ra2e2)
@@ -392,7 +393,6 @@ Peripheral access crates for the different XMC4xxx families of microcontrollers
 - [`ra6t1`](https://github.com/ra-rs/ra/tree/main/pac/ra6t1) Peripheral Access Crate for ra6t1 microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/ra6t1.svg)](https://crates.io/crates/ra6t1)
 - [`ra6t2`](https://github.com/ra-rs/ra/tree/main/pac/ra6t2) Peripheral Access Crate for ra6t2 microcontrollers (generated using svd2rust) - [![crates.io](https://img.shields.io/crates/v/ra6t2.svg)](https://crates.io/crates/ra6t2)
 - [`da14531`](https://crates.io/crates/da14531) Peripheral Access Crate for DA14531 Ultra-Low Power BT 5.1 System-on-Chip - [![crates.io](https://img.shields.io/crates/v/da14531.svg)](https://crates.io/crates/da14531)
-
 
 ## HAL implementation crates
 
@@ -463,31 +463,27 @@ Also check the list of [STMicroelectronics board support crates][stm-bsc]!
 
 - [`stm32f0xx-hal`](https://crates.io/crates/stm32f0xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32f0xx-hal.svg)](https://crates.io/crates/stm32f0xx-hal)
   - Has examples that can run on boards like the [Nucleo-F042K6] and similar boards
-
-[Nucleo-F042K6]: http://www.st.com/en/evaluation-tools/nucleo-f042k6.html
-
+[Nucleo-F042K6]: <http://www.st.com/en/evaluation-tools/nucleo-f042k6.html>
 - [`stm32f1xx-hal`](https://github.com/stm32-rs/stm32f1xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32f1xx-hal.svg)](https://crates.io/crates/stm32f1xx-hal)
   - Can be run on boards like the [Blue pill], [Nucleo-F103RB], and similar boards
-
-[Blue pill]: https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Blue_Pill.html
-[Nucleo-F103RB]: http://www.st.com/en/evaluation-tools/nucleo-f103rb.html
-
+[Blue pill]: <https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Blue_Pill.html>
+[Nucleo-F103RB]: <http://www.st.com/en/evaluation-tools/nucleo-f103rb.html>
 - [`stm32f3xx-hal`](https://crates.io/crates/stm32f3xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32f3xx-hal.svg)](https://crates.io/crates/stm32f3xx-hal)
 - [`stm32f4xx-hal`](https://crates.io/crates/stm32f4xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32f4xx-hal.svg)](https://crates.io/crates/stm32f4xx-hal)
-   - Generic HAL implementation for all MCUs of the stm32f4 series
+  - Generic HAL implementation for all MCUs of the stm32f4 series
 - [`stm32f7xx-hal`](https://crates.io/crates/stm32f7xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32f7xx-hal.svg)](https://crates.io/crates/stm32f7xx-hal)
-   - Generic HAL implementation for all MCUs of the stm32f7 series
+  - Generic HAL implementation for all MCUs of the stm32f7 series
 - [`stm32g0xx-hal`](https://crates.io/crates/stm32g0xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32g0xx-hal.svg)](https://crates.io/crates/stm32g0xx-hal)
 - [`stm32h7xx-hal`](https://crates.io/crates/stm32h7xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32h7xx-hal.svg)](https://crates.io/crates/stm32h7xx-hal)
-    - HAL implementation for the STMicro STM32H7xx family of microcontrollers
+  - HAL implementation for the STMicro STM32H7xx family of microcontrollers
 - [`stm32l0xx-hal`](https://crates.io/crates/stm32l0xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32l0xx-hal.svg)](https://crates.io/crates/stm32l0xx-hal)
-   - HAL implementation for the the STMicro STM32L0xx family of microcontrollers
+  - HAL implementation for the the STMicro STM32L0xx family of microcontrollers
 - [`stm32l1xx-hal`](https://crates.io/crates/stm32l1xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32l1xx-hal.svg)](https://crates.io/crates/stm32l1xx-hal)
 - [`stm32l151-hal`](https://crates.io/crates/stm32l151-hal) - [![crates.io](https://img.shields.io/crates/v/stm32l151-hal.svg)](https://crates.io/crates/stm32l151-hal)
 - [`stm32l4xx-hal`](https://crates.io/crates/stm32l4xx-hal) - [![crates.io](https://img.shields.io/crates/v/stm32l4xx-hal.svg)](https://crates.io/crates/stm32l4xx-hal)
-   - Generic hal support for stm32l4 devices, has examples that can run on boards like the [Nucleo-L432KC], [Solo], and similar boards
+  - Generic hal support for stm32l4 devices, has examples that can run on boards like the [Nucleo-L432KC], [Solo], and similar boards
 - [`stm32-hal`](https://crates.io/crates/stm32-hal2) - [![crates.io](https://img.shields.io/crates/v/stm32-hal2.svg)](https://crates.io/crates/stm32-hal2)
-   - HAL implementation for STM32 devices across multiple families, with a focus on newer ones like L4, L5, and H7.
+  - HAL implementation for STM32 devices across multiple families, with a focus on newer ones like L4, L5, and H7.
 
 [Nucleo-L432KC]: https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-eval-tools/stm32-mcu-eval-tools/stm32-mcu-nucleo/nucleo-l432kc.html
 [Solo]: https://solokeys.com/
@@ -499,7 +495,7 @@ Also check the list of [STMicroelectronics board support crates][stm-bsc]!
 ### MSP430
 
 - [`msp430fr2x5x-hal`](https://crates.io/crates/msp430fr2x5x-hal)
-    - HAL implementation for the MSP430FR2x5x family of microcontrollers
+  - HAL implementation for the MSP430FR2x5x family of microcontrollers
 
 ### Espressif
 
@@ -508,11 +504,10 @@ Also check the list of [STMicroelectronics board support crates][stm-bsc]!
 - [`esp-hal`](https://github.com/esp-rs/esp-hal)
   - A `no_std` Hardware Abstraction Layers for ESP32 microcontrollers
 
-
 ### Silicon Labs
 
 - [`tomu-hal`](https://github.com/fudanchii/imtomu-rs)
-   - HAL implementation targeted for [Tomu] USB board with EFM32HG309F64 ARMv6-M core. Has support to configure [tomu bootloader] directly from an application via the `toboot_config` macro.
+  - HAL implementation targeted for [Tomu] USB board with EFM32HG309F64 ARMv6-M core. Has support to configure [tomu bootloader] directly from an application via the `toboot_config` macro.
 
 [Tomu]: https://tomu.im/
 [tomu bootloader]: https://github.com/im-tomu/tomu-bootloader
@@ -537,6 +532,7 @@ Also check the list of [STMicroelectronics board support crates][stm-bsc]!
   - [Blogpost](https://robamu.github.io/post/rust-ecosystem/)
 
 ### Renesas
+
 - [`da14531-hal`](https://crates.io/crates/da14531-hal) HAL crate for DA14531 Ultra-Low Power BT 5.1 System-on-Chip - [![crates.io](https://img.shields.io/crates/v/da14531-hal.svg)](https://crates.io/crates/da14531-hal)
 
 ### StarFive
@@ -659,9 +655,7 @@ Crates tailored for specific boards.
 - [`pimoroni-pico-explorer`](https://github.com/rp-rs/rp-hal) - Board Support for the [Pimoroni Pico Explorer]
 - [`pimoroni-pico-lipo-16mb`](https://github.com/rp-rs/rp-hal) - Board Support for the [Pimoroni Pico Lipo 16MB]
 
-[pimoroni-pico-explorer]: https://github.com/rp-rs/rp-hal/tree/main/boards/pimoroni-pico-explorer
 [Pimoroni Pico Explorer]: https://shop.pimoroni.com/products/pico-explorer-base
-[pimoroni-pico-lipo-16mb]: https://github.com/rp-rs/rp-hal/tree/main/boards/pimoroni_pico_lipo_16mb
 [Pimoroni Pico Lipo 16MB]: https://shop.pimoroni.com/products/pimoroni-pico-lipo?variant=39335427080275
 
 ### Raspberry Pi
@@ -710,10 +704,10 @@ Crates tailored for specific boards.
 - [`stm32f429i-disc`](https://crates.io/crates/stm32f429i-disc) Board Support Crate for the [STM32F429DISCOVERY] (WIP) - [![crates.io](https://img.shields.io/crates/v/stm32f429i-disc.svg)](https://crates.io/crates/stm32f429i-disc)
 - [`stm32f3-discovery`](https://crates.io/crates/stm32f3-discovery) Board Support Crate for the [STM32F3DISCOVERY] used in [Rust Embedded Discovery book](https://rust-embedded.github.io/discovery/index.html) - [![crates.io](https://img.shields.io/crates/v/stm32f3-discovery)](https://crates.io/crates/stm32f3-discovery)
 
-
 [Nucleo-F401RE]: https://www.st.com/en/evaluation-tools/nucleo-f401re.html
 
 ### Teensy
+
 - [`teensy4-rs`](https://github.com/mciantyre/teensy4-rs) Board Support crate for the [Teensy 4.0]
 
 ### Vorago
@@ -756,7 +750,6 @@ devices that go beyond what is available in [`embedded-hal`]:
 - [`embedded-storage`](https://github.com/rust-embedded-community/embedded-storage): An Embedded Storage Abstraction Layer
 - [`switch-hal`](https://github.com/rubberduck203/switch-hal): An "on"/"off" abstraction for input and output switches - [![crates.io](https://img.shields.io/crates/v/switch-hal.svg)](https://crates.io/crates/switch-hal)
 
-
 ## Driver crates
 
 You can also find many of these drivers [on drive-rs](https://tweedegolf.github.io/drive-rs/); please consider adding your driver there ([in the GitHub repo](https://github.com/tweedegolf/drive-rs)) while we work to port everything across.
@@ -771,7 +764,7 @@ The list below contains drivers that have achieved the "released" status. To add
 to this list, please ensure that your driver has a short blog post, article, or sufficiently
 explanatory README showing an example of its use. Ideally, this post would demonstrate using the
 device in a small project so that a Rust and/or embedded newcomer can also understand it.
-Otherwise, please add it to the [WIP section](#WIP) below.
+Otherwise, please add it to the [WIP section](#wip) below.
 
 1. [AD983x] - SPI - AD9833/AD9837 waveform generators / DDS - [Intro blog post][25] - [![crates.io](https://img.shields.io/crates/v/ad983x.svg)](https://crates.io/crates/ad983x)
 1. [adafruit-alphanum4] - I2C - Driver for [Adafruit 14-segment LED Alphanumeric Backpack][29] based on the ht16k33 chip - [![crates.io](https://img.shields.io/crates/v/adafruit-alphanum4.svg)](https://crates.io/crates/adafruit-alphanum4)
@@ -780,6 +773,7 @@ Otherwise, please add it to the [WIP section](#WIP) below.
 1. [ADXL313] - SPI - 3-axis accelerometer - [![crates.io](https://img.shields.io/crates/v/adxl313.svg)](https://crates.io/crates/adxl313)
 1. [ADXL343] - I2C - 3-axis accelerometer - [![crates.io](https://img.shields.io/crates/v/adxl343.svg)](https://crates.io/crates/adxl343)
 1. [ADXL355] - SPI - 3-axis accelerometer - [Intro blog post][43] - [![crates.io](https://img.shields.io/crates/v/adxl355.svg)](https://crates.io/crates/adxl355)
+1. [AEM10900] - I2C - Energy Harvester - [github](https://github.com/trembel/aem10900) - [![crates.io](https://img.shields.io/crates/v/aem10900.svg)](https://crates.io/crates/aem10900)
 1. [AFE4404] - I2C - Pulse oximeter - [![crates.io](https://img.shields.io/crates/v/afe4404.svg)](https://crates.io/crates/afe4404)
 1. [AHT20] - I2C - Humidity and temperature sensor - [github](https://github.com/chocol4te/aht20) - [![crates.io](https://img.shields.io/crates/v/aht20.svg)](https://crates.io/crates/aht20)
 1. [AHT20-driver] - I2C - Humidity and temperature sensor - [Intro blog post][61] - [github][62] - [![crates.io](https://img.shields.io/crates/v/aht20-driver.svg)](https://crates.io/crates/aht20-driver)
@@ -798,6 +792,7 @@ Otherwise, please add it to the [WIP section](#WIP) below.
 1. [embedded-ccs811] - I2C - Gas and VOC sensor driver for monitoring indoor air quality - [Intro blog post][49] - [![crates.io](https://img.shields.io/crates/v/embedded-ccs811.svg)](https://crates.io/crates/embedded-ccs811)
 1. [embedded-sdmmc] - SPI - SD/MMC Card Driver with MS-DOS Partition and FAT16/FAT32 support - [Intro post][20] [![crates.io](https://img.shields.io/crates/v/embedded-sdmmc.svg)](https://crates.io/crates/embedded-sdmmc)
 1. [ENC28J60] - SPI - Ethernet controller - [Intro blog post][4] - [![crates.io](https://img.shields.io/crates/v/enc28j60.svg)](https://crates.io/crates/enc28j60)
+1. [FH101RF] - SPI - Wake-Up Radio - [github](https://github.com/trembel/fh101rf) - [![crates.io](https://img.shields.io/crates/v/fh101rf.svg)](https://crates.io/crates/fh101rf)
 1. [FUSB302B] - I2C - Programmable USB Type‐C Controller with USB Power Delivery - [github][69]
 1. [HC-12] - SERIAL - Wireless serial transceiver module - [Intro blog post][56] - [github][53] - [![crates.io](https://img.shields.io/crates/v/hc12-at.svg)](https://crates.io/crates/hc12-at)
 1. [HTS221] - I2C - Humidity and temperature sensor - [Intro blog post][7] - [![crates.io](https://img.shields.io/crates/v/hts221.svg)](https://crates.io/crates/hts221)
@@ -937,6 +932,7 @@ Otherwise, please add it to the [WIP section](#WIP) below.
 [ADXL313]: https://crates.io/crates/adxl313
 [ADXL343]: https://crates.io/crates/adxl343
 [ADXL355]: https://crates.io/crates/adxl355
+[AEM10900]: https://crates.io/crates/aem10900
 [AFE4404]: https://github.com/pulse-loop/afe4404
 [AHT20]: https://crates.io/crates/aht20
 [AHT20-driver]: https://crates.io/crates/aht20-driver
@@ -954,6 +950,7 @@ Otherwise, please add it to the [WIP section](#WIP) below.
 [embedded-ccs811]: https://crates.io/crates/embedded-ccs811
 [embedded-sdmmc]: https://crates.io/crates/embedded-sdmmc
 [ENC28J60]: https://crates.io/crates/enc28j60
+[FH101RF]: https://crates.io/crates/fh101rf
 [FUSB302B]: https://github.com/fmckeogh/usb-pd-rs
 [HTS221]: https://crates.io/crates/hts221
 [IIS2MDC]: https://crates.io/crates/iis2mdc
@@ -1285,7 +1282,6 @@ Work in progress drivers. Help the authors make these crates awesome!
 1. [nom](https://crates.io/crates/nom): parser combinator framework - [![crates.io](https://img.shields.io/crates/v/nom.svg)](https://crates.io/crates/nom)
 1. [null-terminated](https://crates.io/crates/null-terminated): generic null-terminated arrays - [![crates.io](https://img.shields.io/crates/v/null-terminated.svg)](https://crates.io/crates/null-terminated)
 1. [num-format](https://crates.io/crates/num-format): Crate for producing string representations of numbers, formatted according to international standards, e.g. "1,000,000" for US English - [![crates.io](https://img.shields.io/crates/v/num-format.svg)](https://crates.io/crates/num-format)
-1. [`panic-persist`]: A panic handler crate inspired by `panic-ramdump` that logs panic messages to a region of RAM defined by the user, allowing for discovery of panic messages post-mortem using normal program control flow. - [![crates.io](https://img.shields.io/crates/v/panic-persist.svg)](https://crates.io/crates/panic-persist)
 1. [pc-keyboard]: A PS/2 keyboard protocol driver. Transport (bit-banging or SPI) agnostic, but can convert Set 2 Scancodes into Unicode. [![crates.io](https://img.shields.io/crates/v/pc-keyboard.svg)](https://crates.io/crates/pc-keyboard)
 1. [qei](https://crates.io/crates/qei) : A qei wrapper that allows you to extend your qei timers from a 16-bit integer to a 64-bit integer. - [![crates.io](https://img.shields.io/crates/v/qei.svg)](https://crates.io/crates/qei)
 1. [qemu-exit]: Quit a running QEMU session with user-defined exit code. Useful for unit or integration tests using QEMU. - [![crates.io](https://img.shields.io/crates/v/qemu-exit.svg)](https://crates.io/crates/qemu-exit)
@@ -1307,8 +1303,8 @@ Work in progress drivers. Help the authors make these crates awesome!
 1. [adafruit-bluefruit-protocol]: A `no_std` parser for the [Adafruit Bluefruit LE Connect controller protocol]. - [![crates.io](https://img.shields.io/crates/v/adafruit-bluefruit-protocol)](https://crates.io/crates/adafruit-bluefruit-protocol)
 1. [wtx](https://github.com/c410-f3r/wtx): Among other things, provides implementations to interact with HTTP, WebSockets and Databases.
 
+[no-std-category]: https://crates.io/categories/no-std
 [`cmim`]: https://crates.io/crates/cmim
-[`panic-persist`]: https://crates.io/crates/panic-persist
 [bitmatch]: https://crates.io/crates/bitmatch
 [biquad]: https://crates.io/crates/biquad
 [embassy]: https://github.com/akiles/embassy
@@ -1334,7 +1330,38 @@ Work in progress crates. Help the authors make these crates awesome!
 - [OxCC](https://github.com/jonlamb-gh/oxcc): A port of Open Source Car Control written in Rust
 - [Rubble](https://github.com/jonas-schievink/rubble): A pure-Rust embedded BLE stack [![crates.io](https://img.shields.io/crates/v/rubble.svg)](https://crates.io/crates/rubble)
 
-[no-std-category]: https://crates.io/categories/no-std
+## Panic handling
+
+There are many ways to handle panics in embedded devices, these crates provide helpful variants.
+
+1. [`dont_panic`] + [`dont_panic_slice`]: panic!()-like macro that causes linking error instead of panicking. May be used to statically ensure some code won't panic. [![crates.io](https://img.shields.io/crates/v/dont_panic.svg)](https://crates.io/crates/dont_panic) + [![crates.io](https://img.shields.io/crates/v/dont_panic_slice.svg)](https://crates.io/crates/dont_panic_slice)
+1. [`no-panic`]: Attribute macro to require that the compiler prove a function can't ever panic. [![crates.io](https://img.shields.io/crates/v/no-panic.svg)](https://crates.io/crates/no-panic)
+1. [`panic-abort`]: Causes an abort on panics (nightly-only) [![crates.io](https://img.shields.io/crates/v/panic-abort.svg)](https://crates.io/crates/panic-abort)
+1. [`panic-halt`]: Halts the processor on panics [![crates.io](https://img.shields.io/crates/v/panic-halt.svg)](https://crates.io/crates/panic-halt)
+1. [`panic-itm`]: Prints the panic through the chip's ITM to a debugger attached to the SWO pin (Cortex-M with ITM only)
+1. [`panic-never`]: This crate guarantees that your application is free of panicking branches. [![crates.io](https://img.shields.io/crates/v/panic-never.svg)](https://crates.io/crates/panic-never)
+1. [`panic-persist`]: A panic handler crate inspired by `panic-ramdump` that logs panic messages to a region of RAM defined by the user, allowing for discovery of panic messages post-mortem using normal program control flow. - [![crates.io](https://img.shields.io/crates/v/panic-persist.svg)](https://crates.io/crates/panic-persist)
+1. [`panic-probe`]: A panic handler that exits `probe-run` with an error code. [![crates.io](https://img.shields.io/crates/v/panic-probe.svg)](https://crates.io/crates/panic-probe)
+1. [`panic-ramdump`]: Writes the panic message into the beginning of RAM and enters an infinite loop; the message can be extracted by attaching a debugger (Cortex-M only) [![crates.io](https://img.shields.io/crates/v/panic-ramdump.svg)](https://crates.io/crates/panic-ramdump)
+1. [`panic-rtt`]: Set the panicking behavior to log to a JLINK debugger and loop. [![crates.io](https://img.shields.io/crates/v/panic_rtt.svg)](https://crates.io/crates/panic_rtt)
+1. [`panic-rtt-target`]: Logs panic messages over RTT. Uses `rtt-target`. [![crates.io](https://img.shields.io/crates/v/panic-rtt-target.svg)](https://crates.io/crates/panic-rtt-target)
+1. [`panic-semihosting`]: Prints the panic message via semihosting to an attached debugger (Cortex-M only)
+1. [`rp2040-panic-usb-boot`]: Save panic message in XIP RAM and reboot RP2040 to USB mode [![crates.io](https://img.shields.io/crates/v/rp2040-panic-usb-boot.svg)](https://crates.io/crates/rp2040-panic-usb-boot)
+
+[`dont_panic_slice`]: https://crates.io/crates/dont_panic_slice
+[`dont_panic`]: https://crates.io/crates/dont_panic
+[`no-panic`]: https://crates.io/crates/no-panic
+[`panic-abort`]: https://crates.io/crates/panic-abort
+[`panic-halt`]: https://crates.io/crates/panic-halt
+[`panic-itm`]: https://github.com/rust-embedded/cortex-m/tree/master/panic-itm
+[`panic-never`]: https://crates.io/crates/panic-never
+[`panic-persist`]: https://crates.io/crates/panic-persist
+[`panic-probe`]: https://crates.io/crates/panic-probe
+[`panic-ramdump`]: https://crates.io/crates/panic-ramdump
+[`panic-rtt`]: https://crates.io/crates/panic_rtt
+[`panic-rtt-target`]: https://crates.io/crates/panic-rtt-target
+[`panic-semihosting`]: https://github.com/rust-embedded/panic-semihosting
+[`rp2040-panic-usb-boot`]: https://crates.io/crates/rp2040-panic-usb-boot
 
 ## Firmware projects
 
@@ -1369,8 +1396,7 @@ These materials may be outdated and reflect earlier practices, but they might st
 
 This list is licensed under
 
-- CC0 1.0 Universal License ([LICENSE-CC0](LICENSE-CC0) or
-  https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+- [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/legalcode) aka [LICENSE-CC0](LICENSE-CC0)
 
 ## Code of Conduct
 
